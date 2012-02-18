@@ -1,0 +1,10 @@
+﻿@using DapperDinner;
+
+
+@if(Request.IsAuthenticated) {
+    <text>Welcome <b>@(((NerdIdentity)HttpContext.Current.User.Identity).FriendlyName)</b>!
+    [ @Html.ActionLink("Log Off", "LogOff", "Account") ]</text>
+}
+else {
+    @:[ @Html.ActionLink("Log On", "LogOn", new { controller = "Account", returnUrl = HttpContext.Current.Request.RawUrl }) ]
+}

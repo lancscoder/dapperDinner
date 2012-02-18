@@ -1,0 +1,40 @@
+﻿@model DapperDinner.Models.Dinner
+@{
+    ViewBag.Title = "Nerd Dinner Details";
+    Layout = "~/Views/Shared/_Layout.Mobile.cshtml";
+}
+<ul id="Details" data-role="listview" data-inset="true">
+    <li>Title:
+        @Model.Title</li>
+    <li>When:
+        @Model.EventDate.ToShortDateString()
+        @@
+        @Model.EventDate.ToShortTimeString()</li>
+    <li><a target="_blank" href="@String.Format("http://maps.google.com/maps?q={0},{1}", Url.Encode(Model.Address), Url.Encode(Model.Country))">
+        Where:
+        @Model.Address,
+        @Model.Country</a></li>
+    <li>Description:
+        @Model.Description</li>
+    <li><a target="_self" href="tel://@Model.ContactPhone">Organizer:
+        @Model.HostedBy
+        (@Model.ContactPhone)</a></li>
+</ul>
+@Html.ActionLink("Add event to your calendar", "iCal", "Services", new { id = Model.DinnerID }, new { data_role = "button", rel = "external" })
+<div data-role="collapsible" data-collapsed="true">
+    <h3>
+        Who's Coming?</h3>
+    <ul data-role="listview" data-inset="true">
+        @if (Model.RSVPs.Count == 0)
+        {
+            <li>No one has registered.</li>
+        }
+        @if (Model.RSVPs.Count > 0)
+        {
+            foreach (var RSVP in Model.RSVPs)
+            {
+            <li>@RSVP.AttendeeName.Replace("@", " at ")</li>
+            }
+        }
+    </ul>
+</div>
