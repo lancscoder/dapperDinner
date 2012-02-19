@@ -142,18 +142,18 @@ namespace DapperDinner.Models
         {
             using (var connection = MvcApplication.GetOpenConnection())
             {
-                var dinner = connection.Query<Dinner>("SELECT * FROM Dinners " +
-                    "WHERE DinnerId = @id", new { id = id }).FirstOrDefault();
+                var sql = @"SELECT * FROM Dinners WHERE DinnerId = @id
+                            SELECT * FROM RSVP WHERE DinnerID = @id";
 
-                if (dinner != null)
+                Dinner dinner;
+                using (var multi = connection.QueryMultiple(sql, new { id = id }))
                 {
-                    dinner.RSVPs = new List<RSVP>();
+                    dinner = multi.Read<Dinner>().FirstOrDefault();
 
-                    var rsvps = connection.Query<RSVP>("SELECT * FROM RSVP WHERE DinnerID = @DinnerID", new { DinnerId = dinner.DinnerID });
-
-                    foreach (RSVP rsvp in rsvps)
+                    // Dinner Exists
+                    if (dinner != null)
                     {
-                        dinner.RSVPs.Add(rsvp);
+                        dinner.RSVPs = multi.Read<RSVP>().ToList();
                     }
                 }
 
@@ -173,6 +173,20 @@ namespace DapperDinner.Models
                     InsertOrUpdateRsvp(rsvp, connection);
                 }
             }
+        }
+
+        public void Delete(int id)
+        {
+            using (var connection = MvcApplication.GetOpenConnection())
+            {
+                connection.Execute(@"DELETE FROM rsvp where DinnerId = @id", new { id = id });
+                connection.Execute(@"DELETE FROM Dinners where DinnerId = @id", new { id = id });
+            }
+        }
+
+        public void Save()
+        {
+            // Not needs.
         }
 
         private void InsertOrUpdateDinner(Dinner dinner, DbConnection connection)
@@ -263,7 +277,7 @@ namespace DapperDinner.Models
                     rsvp.DinnerID,
                     rsvp.AttendeeName,
                     rsvp.AttendeeNameId,
-                }).First();  
+                }).First();
         }
 
         private void UpdateRsvp(RSVP rsvp, DbConnection connection)
@@ -282,20 +296,6 @@ namespace DapperDinner.Models
                 rsvp.AttendeeName,
                 rsvp.AttendeeNameId,
             });
-        }
-
-        public void Delete(int id)
-        {
-            using (var connection = MvcApplication.GetOpenConnection())
-            {
-                connection.Execute(@"DELETE FROM rsvp where DinnerId = @id", new { id = id });
-                connection.Execute(@"DELETE FROM Dinners where DinnerId = @id", new { id = id });
-            }
-        }
-
-        public void Save()
-        {
-            // Not needs.
         }
     }
 }

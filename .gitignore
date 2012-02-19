@@ -15,3 +15,5 @@ msbuild.log
 *.vsp
 *.csv
 .DS_Store
+*db
+DapperDinner/Thumbs.db
