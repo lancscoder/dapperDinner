@@ -76,9 +76,6 @@
     <Reference Include="OpenSearchToolkit">
       <HintPath>..\packages\OpenSearchToolkit.1.1\lib\OpenSearchToolkit.dll</HintPath>
     </Reference>
-    <Reference Include="PagedList">
-      <HintPath>..\packages\PagedList.1.12\lib\net40\PagedList.dll</HintPath>
-    </Reference>
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Services" />
     <Reference Include="System.Data.Services.Client" />
@@ -150,15 +147,15 @@
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\DapperDinnerRepository.cs" />
+    <Compile Include="Models\PagedList.cs" />
     <Compile Include="Models\Dinner.cs" />
-    <Compile Include="Models\DinnerRepository.cs" />
     <Compile Include="Models\FlairViewModel.cs" />
     <Compile Include="Models\IDinnerRepository.cs" />
-    <Compile Include="Models\IRepository.cs" />
     <Compile Include="Models\NerdDinners.cs" />
     <Compile Include="Models\NerdIdentity.cs" />
     <Compile Include="Models\RSVP.cs" />
     <Compile Include="Models\RuleViolation.cs" />
+    <Compile Include="Models\SqlBuilder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\EmbeddedResourceUrlService.cs">
       <SubType>Code</SubType>

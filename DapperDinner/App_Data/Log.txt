@@ -410,3 +410,320 @@
 2012-02-18T13:09:50.5517618Z - 2176 - Debug - Disposing Redirection Module
 2012-02-18T13:10:20.5792450Z - 2176 - Debug - Disposing Redirection Module
 2012-02-18T13:10:38.4408530Z - 2176 - Debug - Disposing Redirection Module
+2012-02-19T10:06:00.0452490Z - 4904 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-19T10:06:00.0764576Z - 4904 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-19T10:06:01.4964489Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:06:01.4964489Z - 4904 - Debug - Initialising redirection module static fields.
+2012-02-19T10:06:01.4964489Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:06:01.5276575Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:06:01.5276575Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:06:01.6524919Z - 4904 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-19T10:06:01.6524919Z - 4904 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-19T10:06:02.1674338Z - 4904 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-19T10:06:26.5101418Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:06:26.5101418Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:07:40.8290327Z - 4904 - Debug - Disposing Redirection Module
+2012-02-19T10:07:40.8290327Z - 4904 - Debug - Disposing Redirection Module
+2012-02-19T10:07:45.7385051Z - 4904 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-19T10:07:45.7435066Z - 4904 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-19T10:07:46.4333042Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:07:46.4333042Z - 4904 - Debug - Initialising redirection module static fields.
+2012-02-19T10:07:46.4333042Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:07:46.4489083Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:07:46.4489083Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:07:46.4801165Z - 4904 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-19T10:07:46.4801165Z - 4904 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-19T10:07:46.7921985Z - 4904 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-19T10:27:47.8514940Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:27:47.8514940Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:27:47.8671189Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:27:47.8671189Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:27:47.8671189Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:27:47.8671189Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:27:47.8671189Z - 4904 - Debug - Initialising redirection module
+2012-02-19T10:27:47.8671189Z - 4904 - Debug - Initialising redirection module event handlers
+2012-02-19T10:28:28.1033440Z - 4904 - Debug - Disposing Redirection Module
+2012-02-19T10:28:28.1033440Z - 4904 - Debug - Disposing Redirection Module
+2012-02-19T10:28:28.1033440Z - 4904 - Debug - Disposing Redirection Module
+2012-02-19T10:28:28.1033440Z - 4904 - Debug - Disposing Redirection Module
+2012-02-19T10:28:28.1033440Z - 4904 - Debug - Disposing Redirection Module
+2012-02-21T20:14:10.0837147Z - 2660 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:14:10.1149229Z - 2660 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-21T20:14:11.3944591Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:14:11.3944591Z - 2660 - Debug - Initialising redirection module static fields.
+2012-02-21T20:14:11.3944591Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:14:11.4256673Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:14:11.4256673Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:14:11.5817083Z - 2660 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:14:11.5973124Z - 2660 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:14:11.9093944Z - 2660 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:14:36.4078314Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:14:36.4078314Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:15:21.5583977Z - 2660 - Debug - Disposing Redirection Module
+2012-02-21T20:15:21.5583977Z - 2660 - Debug - Disposing Redirection Module
+2012-02-21T20:15:38.9887473Z - 2660 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:15:38.9927497Z - 2660 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-21T20:15:39.7111805Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:15:39.7131817Z - 2660 - Debug - Initialising redirection module static fields.
+2012-02-21T20:15:39.7151829Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:15:39.7211865Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:15:39.7221871Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:15:39.7492033Z - 2660 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:15:39.7502039Z - 2660 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:15:40.0844043Z - 2660 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:16:14.6097143Z - 2660 - Debug - Disposing Redirection Module
+2012-02-21T20:16:23.5419246Z - 2660 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:16:23.5575325Z - 2660 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-21T20:16:24.0569853Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:16:24.0569853Z - 2660 - Debug - Initialising redirection module static fields.
+2012-02-21T20:16:24.0725932Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:16:24.0725932Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:16:24.0725932Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:16:24.1038090Z - 2660 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:16:24.1038090Z - 2660 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:16:24.4627907Z - 2660 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:16:27.4751154Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:16:27.4751154Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:17:39.1537700Z - 2660 - Debug - Disposing Redirection Module
+2012-02-21T20:17:39.1537700Z - 2660 - Debug - Disposing Redirection Module
+2012-02-21T20:17:47.5263220Z - 2660 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:17:47.5419252Z - 2660 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-21T20:17:48.2128628Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:17:48.2128628Z - 2660 - Debug - Initialising redirection module static fields.
+2012-02-21T20:17:48.2128628Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:17:48.2284660Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:17:48.2284660Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:17:48.2596724Z - 2660 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-21T20:17:48.2596724Z - 2660 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:17:48.5717364Z - 2660 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-21T20:17:51.7547892Z - 2660 - Debug - Initialising redirection module
+2012-02-21T20:17:51.7547892Z - 2660 - Debug - Initialising redirection module event handlers
+2012-02-21T20:19:47.2366410Z - 2660 - Debug - Disposing Redirection Module
+2012-02-21T20:24:48.7069914Z - 2660 - Debug - Disposing Redirection Module
+2012-02-22T19:53:49.3307136Z - 4168 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T19:53:49.3463177Z - 4168 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T19:59:20.1749105Z - 4168 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T19:59:20.1749105Z - 4168 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:01:21.5108780Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:01:21.5328912Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:01:22.7979764Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:01:22.8135844Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T20:01:22.8135844Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:01:22.8448004Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:01:22.8448004Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:01:22.9696644Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:01:22.9696644Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:01:23.2974324Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:02:52.0424760Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:02:54.8730420Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:02:54.8770428Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:02:55.6131900Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:02:55.6151904Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T20:02:55.6161906Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:02:55.6271928Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:02:55.6291932Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:02:55.6601994Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:02:55.6611996Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:02:56.0882850Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:03:41.0688892Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:03:43.4556050Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:03:43.4616068Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:03:44.2978576Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:03:44.3008585Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T20:03:44.3038594Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:03:44.3098612Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:03:44.3108615Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:03:44.3428711Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:03:44.3448717Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:03:44.6869743Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:04:39.4676090Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:22:20.4490459Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:22:20.4540474Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:22:21.7498341Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:22:21.7528350Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T20:22:21.7548356Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:22:21.7628380Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:22:21.7628380Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:22:21.7898461Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:22:21.7918467Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:22:22.0763301Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:22:26.0927289Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:22:26.0937292Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:23:38.9144003Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:23:38.9144003Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:23:45.0208047Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:23:45.0248059Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:23:45.6707985Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:23:45.6727991Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T20:23:45.6737994Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:23:45.6908045Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:23:45.6928051Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:23:45.7308165Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:23:45.7328171Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:23:46.2659770Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:23:50.2695629Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:23:50.2695629Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:24:44.1370878Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:25:09.4598739Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:25:12.0416482Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:25:12.0476500Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:25:12.8442870Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:25:12.8472879Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T20:25:12.8502888Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:25:12.8562906Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:25:12.8562906Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:25:12.8872999Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:25:12.8883002Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:25:13.2874199Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:25:16.8715875Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:25:16.8725881Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:26:11.3158185Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:26:14.0159293Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:26:14.0159293Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:26:14.0319389Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:26:14.0319389Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:26:20.0315492Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:26:20.0805590Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:27:11.3637410Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:27:41.3710946Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:28:11.3918438Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:28:24.1830491Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:28:24.1920518Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:28:24.2050557Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:28:24.2050557Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:28:24.2610725Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:28:24.2610725Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:29:11.4439449Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:29:41.4654964Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:30:11.4796316Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:31:42.9583109Z - 4168 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:31:42.9583109Z - 4168 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:31:46.4380475Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:48:18.8941944Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:48:18.8991959Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T20:48:19.4117477Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:48:19.4187498Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T20:48:19.4217507Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:48:19.4267522Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:48:19.4267522Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:48:19.4677645Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:48:19.4687648Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:48:19.8098671Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T20:48:21.8866866Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:48:21.8886872Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:48:21.8956893Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:48:21.8956893Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:48:35.0157607Z - 4644 - Debug - Initialising redirection module
+2012-02-22T20:48:35.0157607Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T20:49:18.4999221Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:49:19.6866337Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:49:19.6866337Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:49:19.6866337Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T20:49:29.6650193Z - 4168 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T20:49:29.6806273Z - 4168 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T21:02:25.9278971Z - 4644 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T21:02:25.9308974Z - 4644 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-22T21:02:26.5479591Z - 4644 - Debug - Initialising redirection module
+2012-02-22T21:02:26.5509594Z - 4644 - Debug - Initialising redirection module static fields.
+2012-02-22T21:02:26.5529596Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T21:02:26.5569600Z - 4644 - Debug - Initialising redirection module
+2012-02-22T21:02:26.5579601Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T21:02:26.5829626Z - 4644 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-22T21:02:26.5849628Z - 4644 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T21:02:26.8423883Z - 4644 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-22T21:02:29.0950133Z - 4644 - Debug - Initialising redirection module
+2012-02-22T21:02:29.0950133Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T21:02:29.1510189Z - 4644 - Debug - Initialising redirection module
+2012-02-22T21:02:29.1510189Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T21:02:29.2070245Z - 4644 - Debug - Initialising redirection module
+2012-02-22T21:02:29.2070245Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T21:02:29.6020640Z - 4644 - Debug - Initialising redirection module
+2012-02-22T21:02:29.6020640Z - 4644 - Debug - Initialising redirection module event handlers
+2012-02-22T21:02:48.8017389Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T21:02:48.8017389Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T21:02:48.8017389Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T21:02:48.8017389Z - 4644 - Debug - Disposing Redirection Module
+2012-02-22T21:02:48.8017389Z - 4644 - Debug - Disposing Redirection Module
+2012-02-23T20:08:50.0940686Z - 3492 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-23T20:08:50.1096707Z - 3492 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-23T20:24:04.5548970Z - 5540 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-23T20:24:04.6363195Z - 5540 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-23T20:24:05.8066345Z - 5540 - Debug - Initialising redirection module
+2012-02-23T20:24:05.8066345Z - 5540 - Debug - Initialising redirection module static fields.
+2012-02-23T20:24:05.8066345Z - 5540 - Debug - Initialising redirection module event handlers
+2012-02-23T20:24:05.8690513Z - 5540 - Debug - Initialising redirection module
+2012-02-23T20:24:05.8690513Z - 5540 - Debug - Initialising redirection module event handlers
+2012-02-23T20:24:05.9782807Z - 5540 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-23T20:24:05.9782807Z - 5540 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-23T20:24:06.2903647Z - 5540 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-23T20:26:21.3208140Z - 5540 - Debug - Disposing Redirection Module
+2012-02-23T20:26:34.9016838Z - 5540 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-23T20:26:34.9016838Z - 5540 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-23T20:26:35.4946472Z - 5540 - Debug - Initialising redirection module
+2012-02-23T20:26:35.4946472Z - 5540 - Debug - Initialising redirection module static fields.
+2012-02-23T20:26:35.4946472Z - 5540 - Debug - Initialising redirection module event handlers
+2012-02-23T20:26:35.5102515Z - 5540 - Debug - Initialising redirection module
+2012-02-23T20:26:35.5102515Z - 5540 - Debug - Initialising redirection module event handlers
+2012-02-23T20:26:35.5258558Z - 5540 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-23T20:26:35.5258558Z - 5540 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-23T20:26:35.8379418Z - 5540 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-23T20:26:52.5749667Z - 5540 - Debug - Disposing Redirection Module
+2012-02-23T20:26:56.8582513Z - 5540 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-23T20:26:56.8642531Z - 5540 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-02-23T20:26:57.3934118Z - 5540 - Debug - Initialising redirection module
+2012-02-23T20:26:57.4004139Z - 5540 - Debug - Initialising redirection module static fields.
+2012-02-23T20:26:57.4024145Z - 5540 - Debug - Initialising redirection module event handlers
+2012-02-23T20:26:57.4064157Z - 5540 - Debug - Initialising redirection module
+2012-02-23T20:26:57.4084163Z - 5540 - Debug - Initialising redirection module event handlers
+2012-02-23T20:26:57.4364247Z - 5540 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-02-23T20:26:57.4374250Z - 5540 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-23T20:26:57.7295126Z - 5540 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-02-23T20:27:00.3468402Z - 5540 - Debug - Initialising redirection module
+2012-02-23T20:27:00.3468402Z - 5540 - Debug - Initialising redirection module event handlers
+2012-02-23T20:27:45.3890398Z - 5540 - Debug - Disposing Redirection Module
+2012-02-23T20:27:45.3890398Z - 5540 - Debug - Disposing Redirection Module
+2012-03-01T20:01:17.5999157Z - 868 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-03-01T20:01:17.5999157Z - 868 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-03-01T20:08:56.5290534Z - 2704 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-03-01T20:08:56.5530606Z - 2704 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-03-01T20:08:57.6927837Z - 2704 - Debug - Initialising redirection module
+2012-03-01T20:08:57.6927837Z - 2704 - Debug - Initialising redirection module static fields.
+2012-03-01T20:08:57.7083879Z - 2704 - Debug - Initialising redirection module event handlers
+2012-03-01T20:08:57.7552005Z - 2704 - Debug - Initialising redirection module
+2012-03-01T20:08:57.7552005Z - 2704 - Debug - Initialising redirection module event handlers
+2012-03-01T20:08:57.8800341Z - 2704 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-03-01T20:08:57.8800341Z - 2704 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-03-01T20:08:58.2545349Z - 2704 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-03-01T20:09:24.1731111Z - 2704 - Debug - Initialising redirection module
+2012-03-01T20:09:24.1731111Z - 2704 - Debug - Initialising redirection module event handlers
+2012-03-01T20:09:24.2199237Z - 2704 - Debug - Initialising redirection module
+2012-03-01T20:09:24.2199237Z - 2704 - Debug - Initialising redirection module event handlers
+2012-03-01T20:09:24.9221127Z - 2704 - Debug - Initialising redirection module
+2012-03-01T20:09:24.9221127Z - 2704 - Debug - Initialising redirection module event handlers
+2012-03-01T20:10:25.4699278Z - 2704 - Debug - Disposing Redirection Module
+2012-03-01T20:10:26.0711081Z - 2704 - Debug - Disposing Redirection Module
+2012-03-01T20:10:26.0711081Z - 2704 - Debug - Disposing Redirection Module
+2012-03-01T20:10:26.0711081Z - 2704 - Debug - Disposing Redirection Module
+2012-03-01T20:10:31.1956450Z - 2704 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-03-01T20:10:31.2006465Z - 2704 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-03-01T20:10:31.8826319Z - 2704 - Debug - Initialising redirection module
+2012-03-01T20:10:31.8826319Z - 2704 - Debug - Initialising redirection module static fields.
+2012-03-01T20:10:31.8826319Z - 2704 - Debug - Initialising redirection module event handlers
+2012-03-01T20:10:31.8982360Z - 2704 - Debug - Initialising redirection module
+2012-03-01T20:10:31.8982360Z - 2704 - Debug - Initialising redirection module event handlers
+2012-03-01T20:10:31.9294442Z - 2704 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-03-01T20:10:31.9294442Z - 2704 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-03-01T20:10:32.3039426Z - 2704 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-03-01T20:10:50.2602837Z - 2704 - Debug - Disposing Redirection Module
+2012-03-01T20:13:17.9669388Z - 5484 - Debug - Getting 'fiftyOne/redirect' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-03-01T20:13:17.9979481Z - 5484 - Debug - Constructing MobileCapabilitiesProvider - Default
+2012-03-01T20:13:18.8772118Z - 5484 - Debug - Initialising redirection module
+2012-03-01T20:13:18.8802127Z - 5484 - Debug - Initialising redirection module static fields.
+2012-03-01T20:13:18.8832136Z - 5484 - Debug - Initialising redirection module event handlers
+2012-03-01T20:13:18.9252262Z - 5484 - Debug - Initialising redirection module
+2012-03-01T20:13:18.9252262Z - 5484 - Debug - Initialising redirection module event handlers
+2012-03-01T20:13:19.0742709Z - 5484 - Debug - Getting 'fiftyOne/detection' configuration from file 'C:\Users\Simon Grimshaw\Documents\Code\DapperDinner\DapperDinner\App_Data\51Degrees.mobi.config'.
+2012-03-01T20:13:19.0762715Z - 5484 - Debug - Creating provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-03-01T20:13:19.5003987Z - 5484 - Info - Created provider from embedded device data 'FiftyOne.Foundation.Mobile.Detection.Binary.Resources.51Degrees.mobi-Lite.dat'.
+2012-03-01T20:13:23.5639762Z - 5484 - Debug - Initialising redirection module
+2012-03-01T20:13:23.5639762Z - 5484 - Debug - Initialising redirection module event handlers

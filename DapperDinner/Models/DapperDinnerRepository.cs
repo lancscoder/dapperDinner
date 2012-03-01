@@ -1,140 +1,90 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using System.Linq;
 using System.Web;
 using Dapper;
-using System.Data.Common;
 
 namespace DapperDinner.Models
 {
     public class DapperDinnerRepository : IDinnerRepository
     {
-        public IQueryable<Dinner> FindByLocation(float latitude, float longitude)
+        private string pagedQuery = @"SELECT * FROM (SELECT *, ROW_NUMBER() OVER (/**orderby**/) AS RowNumber FROM (
+            SELECT d.*, COUNT(r.DinnerID) AS RsvpCount 
+            FROM Dinners d LEFT OUTER JOIN RSVP r ON d.DinnerID = r.DinnerID 
+            /**where**/
+            GROUP BY d.DinnerID, d.Title, d.EventDate, d.Description, d.HostedById, d.HostedBy, d.ContactPhone, d.Address, d.Country, d.Latitude, d.Longitude
+            ) as X ) as Y
+            WHERE RowNumber BETWEEN @start AND @finish";
+
+        private string totalQuery = @"SELECT COUNT(*) FROM Dinners d /**where**/";
+
+        public PagedList<Dinner> FindByLocation(float latitude, float longitude, string orderBy = "DinnerID", int page = 1, int pageSize = 20)
+        {
+            var where = @"EventDate >= @EventDate AND dbo.DistanceBetween(@Lat, @Long, Latitude, Longitude) < 1000";
+
+            return FindDinners(where, new { EventDate = DateTime.Now, Lat = latitude, Long = longitude }, orderBy, page, pageSize);
+        }
+
+        public PagedList<Dinner> FindUpcomingDinners(string orderBy = "DinnerID", int page = 1, int pageSize = 20)
+        {
+            return FindUpcomingDinners(null, orderBy, page, pageSize);
+        }
+
+        public PagedList<Dinner> FindUpcomingDinners(DateTime? eventDate, string orderBy = "DinnerID", int page = 1, int pageSize = 20)
+        {
+            var where = @"EventDate >= @EventDate";
+
+            if (!eventDate.HasValue)
+            {
+                eventDate = DateTime.Now;
+            }
+
+            return FindDinners(where, new { EventDate = eventDate.Value }, orderBy, page, pageSize);
+        }
+
+        public PagedList<Dinner> FindDinnersByText(string q, string orderBy = "DinnerID", int page = 1, int pageSize = 20)
+        {
+            var query = String.Format("%{0}%", q);
+            var where = @"Title like @query OR Description like @query OR HostedBy like @query";
+
+            return FindDinners(where, new { Query = q }, orderBy, page, pageSize);
+        }
+
+        private PagedList<Dinner> FindDinners(string where, object parameters, string orderBy = "DinnerID", int page = 1, int pageSize = 20)
         {
             using (var connection = MvcApplication.GetOpenConnection())
             {
-                var results = connection.Query<Dinner>("SELECT * FROM Dinners " +
-                    "WHERE EventDate >= @EventDate AND dbo.DistanceBetween(@Lat, @Long, Latitude, Longitude) < 1000",
-                    new { EventDate = DateTime.Now, Lat = latitude, Long = longitude });
+                var builder = new SqlBuilder();
 
-                foreach (Dinner dinner in results)
-                {
-                    dinner.RSVPs = new List<RSVP>();
+                var start = (page - 1) * pageSize + 1;
+                var finish = page * pageSize;
 
-                    var rsvps = connection.Query<RSVP>("SELECT * FROM RSVP WHERE DinnerID = @DinnerID", new { DinnerId = dinner.DinnerID });
+                var selectTemplate = builder.AddTemplate(pagedQuery, new { start, finish });
+                var countTemplate = builder.AddTemplate(totalQuery);
 
-                    foreach (RSVP rsvp in rsvps)
-                    {
-                        dinner.RSVPs.Add(rsvp);
-                    }
-                }
+                builder.Where(where, parameters);
 
-                return results.AsQueryable<Dinner>();
+                builder.OrderBy(orderBy);
+
+                var results = connection.Query<Dinner>(selectTemplate.RawSql, selectTemplate.Parameters);
+                var count = connection.Query<int>(countTemplate.RawSql, countTemplate.Parameters).First();
+
+                return new PagedList<Dinner>(results, page, count, pageSize);
             }
         }
 
-        public IQueryable<Dinner> FindUpcomingDinners()
+        public IEnumerable<Dinner> AllDinnersByUser(string name)
         {
             using (var connection = MvcApplication.GetOpenConnection())
             {
-                var results = connection.Query<Dinner>("SELECT * FROM Dinners WHERE EventDate >= @EventDate",
-                    new { EventDate = DateTime.Now });
+                var results = connection.Query<Dinner>(@"SELECT DISTINCT Dinners.* 
+                        FROM Dinners LEFT OUTER JOIN RSVP ON Dinners.DinnerID = RSVP.DinnerID 
+                        WHERE Dinners.HostedById = @name OR Dinners.HostedBy = @name
+                        OR RSVP.AttendeeNameId = @name OR RSVP.AttendeeNameId = @name
+                        ORDER BY Dinners.EventDate", new { name });
 
-                // Needed as doesnt have lazy loading
-                // Change to have a count parameter?
-                foreach (Dinner dinner in results)
-                {
-                    dinner.RSVPs = new List<RSVP>();
-
-                    var rsvps = connection.Query<RSVP>("SELECT * FROM RSVP WHERE DinnerID = @DinnerID", new { DinnerId = dinner.DinnerID });
-
-                    foreach (RSVP rsvp in rsvps)
-                    {
-                        dinner.RSVPs.Add(rsvp);
-                    }
-                }
-
-                return results.AsQueryable<Dinner>();
-            }
-        }
-
-        public IQueryable<Dinner> FindDinnersByText(string q)
-        {
-            using (var connection = MvcApplication.GetOpenConnection())
-            {
-                var query = String.Format("%{0}%", q);
-
-                var results = connection.Query<Dinner>("SELECT * FROM Dinners WHERE Title like @query OR Description like @query OR HostedBy like @query",
-                    new { Query = q });
-
-                foreach (Dinner dinner in results)
-                {
-                    dinner.RSVPs = new List<RSVP>();
-
-                    var rsvps = connection.Query<RSVP>("SELECT * FROM RSVP WHERE DinnerID = @DinnerID", new { DinnerId = dinner.DinnerID });
-
-                    foreach (RSVP rsvp in rsvps)
-                    {
-                        dinner.RSVPs.Add(rsvp);
-                    }
-                }
-
-                return results.AsQueryable<Dinner>();
-            }
-        }
-
-        public void DeleteRsvp(RSVP rsvp)
-        {
-            using (var connection = MvcApplication.GetOpenConnection())
-            {
-                connection.Execute(@"DELETE FROM rsvp where RsvpID = @id", new { id = rsvp.RsvpID });
-            }
-        }
-
-        public IQueryable<Dinner> All
-        {
-            get
-            {
-                using (var connection = MvcApplication.GetOpenConnection())
-                {
-                    var results = connection.Query<Dinner>("SELECT * FROM Dinners");
-
-                    foreach (Dinner dinner in results)
-                    {
-                        dinner.RSVPs = new List<RSVP>();
-
-                        var rsvps = connection.Query<RSVP>("SELECT * FROM RSVP WHERE DinnerID = @DinnerID", new { DinnerId = dinner.DinnerID });
-
-                        foreach (RSVP rsvp in rsvps)
-                        {
-                            dinner.RSVPs.Add(rsvp);
-                        }
-                    }
-
-                    return results.AsQueryable<Dinner>();
-                }
-            }
-        }
-
-        public IQueryable<Dinner> AllIncluding(params System.Linq.Expressions.Expression<Func<Dinner, object>>[] includeProperties)
-        {
-            using (var connection = MvcApplication.GetOpenConnection())
-            {
-                var results = connection.Query<Dinner>("SELECT * FROM Dinners");
-
-                foreach (Dinner dinner in results)
-                {
-                    dinner.RSVPs = new List<RSVP>();
-
-                    var rsvps = connection.Query<RSVP>("SELECT * FROM RSVP WHERE DinnerID = @DinnerID", new { DinnerId = dinner.DinnerID });
-
-                    foreach (RSVP rsvp in rsvps)
-                    {
-                        dinner.RSVPs.Add(rsvp);
-                    }
-                }
-
-                return results.AsQueryable<Dinner>();
+                return results;
             }
         }
 
@@ -175,6 +125,14 @@ namespace DapperDinner.Models
             }
         }
 
+        public void InsertOrUpdate(RSVP rsvp)
+        {
+            using (var connection = MvcApplication.GetOpenConnection())
+            {
+                InsertOrUpdateRsvp(rsvp, connection);
+            }
+        }
+
         public void Delete(int id)
         {
             using (var connection = MvcApplication.GetOpenConnection())
@@ -184,9 +142,12 @@ namespace DapperDinner.Models
             }
         }
 
-        public void Save()
+        public void DeleteRsvp(RSVP rsvp)
         {
-            // Not needs.
+            using (var connection = MvcApplication.GetOpenConnection())
+            {
+                connection.Execute(@"DELETE FROM rsvp where RsvpID = @id", new { id = rsvp.RsvpID });
+            }
         }
 
         private void InsertOrUpdateDinner(Dinner dinner, DbConnection connection)
