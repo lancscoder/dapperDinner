@@ -5,7 +5,6 @@ using System.Xml.Linq;
 using DapperDinner.Helpers;
 using DapperDinner.Models;
 using DapperDinner.Services;
-using PagedList;
 
 namespace DapperDinner.Controllers
 {
@@ -46,28 +45,26 @@ namespace DapperDinner.Controllers
         [HttpPost]
         public ActionResult SearchByLocation(float latitude, float longitude)
         {
+            var dinners = dinnerRepository.FindByLocation(latitude, longitude).Select(JsonDinnerFromDinner);
 
-            var dinners = dinnerRepository.FindByLocation(latitude, longitude);
-
-            var jsonDinners = from dinner in dinners.AsEnumerable()
-                              select JsonDinnerFromDinner(dinner);
-
-            return Json(jsonDinners.ToList());
+            return Json(dinners);
         }
 
         [HttpPost]
         public ActionResult SearchByPlaceNameOrZip(string Location)
         {
-            if (String.IsNullOrEmpty(Location)) return null; ;
+            if (String.IsNullOrEmpty(Location)) return null;
+
             LatLong location = GeolocationService.PlaceOrZipToLatLong(Location);
+
             if (location != null)
             {
                 var dinners = dinnerRepository.
-                                FindByLocation(location.Lat, location.Long).
-                                OrderByDescending(p => p.EventDate);
+                                FindByLocation(location.Lat, location.Long, "EventDate");
 
-                return View("Results", dinners.ToPagedList(1, 20));
+                return View("Results", dinners);
             }
+            
             return View("Results", null);
         }
 
@@ -79,19 +76,9 @@ namespace DapperDinner.Controllers
         [HttpPost]
         public ActionResult GetMostPopularDinners(int? limit)
         {
-            var dinners = dinnerRepository.FindUpcomingDinners();
+            var mostPopularDinners = dinnerRepository.FindUpcomingDinners("RsvpCount desc", 1, limit ?? 40);
 
-            // Default the limit to 40, if not supplied.
-            if (!limit.HasValue)
-                limit = 40;
-
-            var mostPopularDinners = from dinner in dinners
-                                     orderby dinner.RSVPs.Count descending
-                                     select dinner;
-
-            var jsonDinners =
-                mostPopularDinners.Take(limit.Value).AsEnumerable()
-                .Select(item => JsonDinnerFromDinner(item));
+            var jsonDinners = mostPopularDinners.Select(JsonDinnerFromDinner);
 
             return Json(jsonDinners.ToList());
         }
@@ -106,7 +93,7 @@ namespace DapperDinner.Controllers
                 Longitude = dinner.Longitude,
                 Title = dinner.Title,
                 Description = dinner.Description,
-                RSVPCount = dinner.RSVPs.Count,
+                RSVPCount = dinner.RsvpCount.GetValueOrDefault(0),
 
                 //TODO: Need to mock this out for testing...
                 //Url = Url.RouteUrl("PrettyDetails", new { Id = dinner.DinnerID } )

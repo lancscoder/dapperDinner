@@ -50,6 +50,9 @@ namespace DapperDinner.Models
         [HiddenInput(DisplayValue = false)]
         public string HostedById { get; set; }
 
+        [NotMapped]
+        public int? RsvpCount { get; set; }
+
         public virtual ICollection<RSVP> RSVPs { get; set; }
 
         public bool IsHostedBy(string userName)

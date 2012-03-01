@@ -20,20 +20,8 @@ namespace DapperDinner.App_Start
     {
         public static void PreStart()
         {
-
-            // Be sure to restart you ASP.NET Developement server, this code will not run until you do that. 
-
-            //TODO: See - _MINIPROFILER UPDATED Layout.cshtml
-            //      For profiling to display in the UI you will have to include the line @MvcMiniProfiler.MiniProfiler.RenderIncludes() 
-            //      in your master layout
-
-            //TODO: Non SQL Server based installs can use other formatters like: new MvcMiniProfiler.SqlFormatters.InlineFormatter()
             MiniProfiler.Settings.SqlFormatter = new MvcMiniProfiler.SqlFormatters.SqlServerFormatter();
 
-            //TODO: To profile a standard DbConnection: 
-            // var profiled = new ProfiledDbConnection(cnn, MiniProfiler.Current);
-
-            //TODO: If you are profiling EF code first try: 
             MiniProfilerEF.Initialize();
 
             //Make sure the MiniProfiler handles BeginRequest and EndRequest
@@ -63,23 +51,8 @@ namespace DapperDinner.App_Start
             context.BeginRequest += (sender, e) =>
             {
                 var request = ((HttpApplication)sender).Request;
-                //TODO: By default only local requests are profiled, optionally you can set it up
-                //  so authenticated users are always profiled
-                //if (request.IsLocal) { MiniProfiler.Start(); }
                 MiniProfiler.Start();
             };
-
-
-            // TODO: You can control who sees the profiling information
-            /*
-            context.AuthenticateRequest += (sender, e) =>
-            {
-                if (!CurrentUserIsAllowedToSeeProfiler())
-                {
-                    MvcMiniProfiler.MiniProfiler.Stop(discardResults: true);
-                }
-            };
-            */
 
             context.EndRequest += (sender, e) =>
             {
@@ -90,4 +63,3 @@ namespace DapperDinner.App_Start
         public void Dispose() { }
     }
 }
-

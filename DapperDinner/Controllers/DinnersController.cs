@@ -5,19 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using DapperDinner.Helpers;
 using DapperDinner.Models;
-using PagedList;
 
 namespace DapperDinner.Controllers
 {
     [HandleErrorWithELMAH]
     public class DinnersController : Controller
     {
-
         IDinnerRepository dinnerRepository;
-
         NerdIdentity _nerdIdentity;
-
-
 
         private NerdIdentity nerdIdentity
         {
@@ -38,7 +33,6 @@ namespace DapperDinner.Controllers
         {
             dinnerRepository = repository;
             _nerdIdentity = nerdIdentity;
-
         }
 
         //
@@ -48,17 +42,15 @@ namespace DapperDinner.Controllers
 
         public ActionResult Index(string q, int? page)
         {
-
-            IQueryable<Dinner> dinners = null;
+            IEnumerable<Dinner> dinners = null;
 
             //Searching?
             if (!string.IsNullOrWhiteSpace(q))
-                dinners = dinnerRepository.FindDinnersByText(q).OrderBy(d => d.EventDate);
+                dinners = dinnerRepository.FindDinnersByText(q, "EventDate", page ?? 1, PageSize);
             else
-                dinners = dinnerRepository.FindUpcomingDinners();
+                dinners = dinnerRepository.FindUpcomingDinners("EventDate", page ?? 1, PageSize);
 
-            int pageIndex = page ?? 1;
-            return View(dinners.ToPagedList(pageIndex, PageSize));
+            return View(dinners);
         }
 
         //
@@ -104,7 +96,6 @@ namespace DapperDinner.Controllers
         [HttpPost, Authorize, ValidateAntiForgeryToken]
         public ActionResult Edit(int id, FormCollection collection)
         {
-
             Dinner dinner = dinnerRepository.Find(id);
 
             if (!dinner.IsHostedBy(User.Identity.Name))
@@ -114,7 +105,7 @@ namespace DapperDinner.Controllers
             {
                 UpdateModel(dinner);
 
-                dinnerRepository.Save();
+                dinnerRepository.InsertOrUpdate(dinner);
 
                 return RedirectToAction("Details", new { id = dinner.DinnerID });
             }
@@ -130,7 +121,6 @@ namespace DapperDinner.Controllers
         [Authorize]
         public ActionResult Create()
         {
-
             Dinner dinner = new Dinner()
             {
                 EventDate = DateTime.Now.AddDays(7)
@@ -145,7 +135,6 @@ namespace DapperDinner.Controllers
         [HttpPost, Authorize, ValidateAntiForgeryToken]
         public ActionResult Create(Dinner dinner)
         {
-
             if (ModelState.IsValid)
             {
                 dinner.HostedById = this.nerdIdentity.Name;
@@ -159,7 +148,6 @@ namespace DapperDinner.Controllers
                 dinner.RSVPs.Add(rsvp);
 
                 dinnerRepository.InsertOrUpdate(dinner);
-                dinnerRepository.Save();
 
                 return RedirectToAction("Details", new { id = dinner.DinnerID });
             }
@@ -173,7 +161,6 @@ namespace DapperDinner.Controllers
         [Authorize, ValidateAntiForgeryToken]
         public ActionResult Delete(int id)
         {
-
             Dinner dinner = dinnerRepository.Find(id);
 
             if (dinner == null)
@@ -191,7 +178,6 @@ namespace DapperDinner.Controllers
         [HttpPost, Authorize]
         public ActionResult Delete(int id, string confirmButton)
         {
-
             Dinner dinner = dinnerRepository.Find(id);
 
             if (dinner == null)
@@ -201,7 +187,6 @@ namespace DapperDinner.Controllers
                 return View("InvalidOwner");
 
             dinnerRepository.Delete(id);
-            dinnerRepository.Save();
 
             return View("Deleted");
         }
@@ -227,15 +212,7 @@ namespace DapperDinner.Controllers
         {
             _nerdIdentity = this.nerdIdentity;
 
-            var userDinners = from dinner in dinnerRepository.All
-                              where
-                                (
-                                String.Equals((dinner.HostedById ?? dinner.HostedBy), _nerdIdentity.Name)
-                                    ||
-                                dinner.RSVPs.Any(r => r.AttendeeNameId == _nerdIdentity.Name || (r.AttendeeNameId == null && r.AttendeeName == _nerdIdentity.Name))
-                                )
-                              orderby dinner.EventDate
-                              select dinner;
+            var userDinners = dinnerRepository.AllDinnersByUser(_nerdIdentity.Name);
 
             return View(userDinners);
         }
@@ -243,22 +220,18 @@ namespace DapperDinner.Controllers
         public ActionResult WebSlicePopular()
         {
             ViewData["Title"] = "Popular Nerd Dinners";
-            var model = from dinner in dinnerRepository.FindUpcomingDinners()
-                        orderby dinner.RSVPs.Count descending
-                        select dinner;
-            return View("WebSlice", model.Take(5));
+            var model = dinnerRepository.FindUpcomingDinners("RsvpCount", 1, 5);
+
+            return View("WebSlice", model);
         }
 
         public ActionResult WebSliceUpcoming()
         {
             ViewData["Title"] = "Upcoming Nerd Dinners";
             DateTime d = DateTime.Now.AddMonths(2);
-            var model = from dinner in dinnerRepository.FindUpcomingDinners()
-                        where dinner.EventDate < d
-                        orderby dinner.EventDate descending
-                        select dinner;
-            return View("WebSlice", model.Take(5));
-        }
+            var model = dinnerRepository.FindUpcomingDinners(d, "EventDate desc", 1, 5);
 
+            return View("WebSlice", model);
+        }
     }
 }

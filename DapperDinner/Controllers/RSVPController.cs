@@ -14,7 +14,6 @@ namespace DapperDinner.Controllers
     [HandleErrorWithELMAH]
     public class RSVPController : Controller
     {
-
         IDinnerRepository dinnerRepository;
 
         private static OpenIdRelyingParty relyingParty = new OpenIdRelyingParty(null);
@@ -38,7 +37,6 @@ namespace DapperDinner.Controllers
         [Authorize, HttpPost]
         public ActionResult Register(int id)
         {
-
             Dinner dinner = dinnerRepository.Find(id);
 
             if (!dinner.IsUserRegistered(User.Identity.Name))
@@ -48,9 +46,9 @@ namespace DapperDinner.Controllers
                 NerdIdentity nerd = (NerdIdentity)User.Identity;
                 rsvp.AttendeeNameId = nerd.Name;
                 rsvp.AttendeeName = nerd.FriendlyName;
+                rsvp.DinnerID = dinner.DinnerID;
 
-                dinner.RSVPs.Add(rsvp);
-                dinnerRepository.Save();
+                dinnerRepository.InsertOrUpdate(rsvp);
             }
 
             return Content("Thanks - we'll see you there!");
@@ -62,18 +60,15 @@ namespace DapperDinner.Controllers
         [Authorize, HttpPost]
         public ActionResult Cancel(int id)
         {
+            var dinner = dinnerRepository.Find(id);
 
-            Dinner dinner = dinnerRepository.Find(id);
-
-            RSVP rsvp = dinner.RSVPs
+            var rsvp = dinner.RSVPs
                 .Where(r => User.Identity.Name == (r.AttendeeNameId ?? r.AttendeeName))
                 .SingleOrDefault();
 
             if (rsvp != null)
             {
-
                 dinnerRepository.DeleteRsvp(rsvp);
-                dinnerRepository.Save();
             }
 
             return Content("Sorry you can't make it!");
@@ -125,9 +120,9 @@ namespace DapperDinner.Controllers
                     RSVP rsvp = new RSVP();
                     rsvp.AttendeeName = alias;
                     rsvp.AttendeeNameId = response.ClaimedIdentifier;
+                    rsvp.DinnerID = dinner.DinnerID;
 
-                    dinner.RSVPs.Add(rsvp);
-                    dinnerRepository.Save();
+                    dinnerRepository.InsertOrUpdate(rsvp);
                 }
             }
 
@@ -158,9 +153,9 @@ namespace DapperDinner.Controllers
                 {
                     RSVP rsvp = new RSVP();
                     rsvp.AttendeeName = alias;
+                    rsvp.DinnerID = dinner.DinnerID;
 
-                    dinner.RSVPs.Add(rsvp);
-                    dinnerRepository.Save();
+                    dinnerRepository.InsertOrUpdate(rsvp);
                 }
             }
 

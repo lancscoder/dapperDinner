@@ -63,8 +63,7 @@ namespace DapperDinner.Controllers
 
             var location = GeolocationService.HostIpToPlaceName(SourceIP);
             var dinners = dinnerRepository.
-                FindByLocation(location.Position.Lat, location.Position.Long).
-                OrderByDescending(p => p.EventDate).Take(3);
+                FindByLocation(location.Position.Lat, location.Position.Long, "EventDate desc", 1, 3);
 
             // Select the view we'll return. Using a switch because we'll add in JSON and other formats later.
             // Will probably extract or refactor this.
