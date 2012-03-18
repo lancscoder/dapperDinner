@@ -18,3 +18,5 @@ msbuild.log
 *db
 DapperDinner/Thumbs.db
 [Ll]ogs
+
+DapperDinner/App_Data/Log.txt

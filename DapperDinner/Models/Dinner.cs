@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace DapperDinner.Models
 {
-    public class Dinner
+    public class Dinner : ITracker
     {
         [HiddenInput(DisplayValue = false)]
         public int DinnerID { get; set; }
@@ -50,7 +50,7 @@ namespace DapperDinner.Models
         [HiddenInput(DisplayValue = false)]
         public string HostedById { get; set; }
 
-        [NotMapped]
+        [HiddenInput(DisplayValue = false)]
         public int? RsvpCount { get; set; }
 
         public virtual ICollection<RSVP> RSVPs { get; set; }
@@ -66,7 +66,6 @@ namespace DapperDinner.Models
         }
 
         [UIHint("LocationDetail")]
-        [NotMapped]
         public LocationDetail Location
         {
             get
@@ -81,6 +80,9 @@ namespace DapperDinner.Models
                 this.Address = value.Address;
             }
         }
+
+        [HiddenInput(DisplayValue = false)]
+        public ObjectState State { get; set; }
     }
 
     public class LocationDetail
