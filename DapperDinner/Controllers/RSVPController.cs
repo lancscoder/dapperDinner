@@ -41,12 +41,10 @@ namespace DapperDinner.Controllers
 
             if (!dinner.IsUserRegistered(User.Identity.Name))
             {
-
-                RSVP rsvp = new RSVP();
+                RSVP rsvp = dinnerRepository.NewRsvp(dinner.DinnerID);
                 NerdIdentity nerd = (NerdIdentity)User.Identity;
                 rsvp.AttendeeNameId = nerd.Name;
                 rsvp.AttendeeName = nerd.FriendlyName;
-                rsvp.DinnerID = dinner.DinnerID;
 
                 dinnerRepository.InsertOrUpdate(rsvp);
             }
@@ -117,10 +115,9 @@ namespace DapperDinner.Controllers
                 // Need to trim to 30 characters because that's the max for Attendee names.
                 if (!dinner.IsUserRegistered(alias))
                 {
-                    RSVP rsvp = new RSVP();
+                    RSVP rsvp = dinnerRepository.NewRsvp(dinner.DinnerID);
                     rsvp.AttendeeName = alias;
                     rsvp.AttendeeNameId = response.ClaimedIdentifier;
-                    rsvp.DinnerID = dinner.DinnerID;
 
                     dinnerRepository.InsertOrUpdate(rsvp);
                 }
@@ -151,9 +148,8 @@ namespace DapperDinner.Controllers
                 string alias = "@" + screenName;
                 if (!dinner.IsUserRegistered(alias))
                 {
-                    RSVP rsvp = new RSVP();
+                    RSVP rsvp = dinnerRepository.NewRsvp(dinner.DinnerID);
                     rsvp.AttendeeName = alias;
-                    rsvp.DinnerID = dinner.DinnerID;
 
                     dinnerRepository.InsertOrUpdate(rsvp);
                 }

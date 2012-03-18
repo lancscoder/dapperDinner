@@ -79,7 +79,6 @@ namespace DapperDinner.Controllers
         [Authorize]
         public ActionResult Edit(int id)
         {
-
             Dinner dinner = dinnerRepository.Find(id);
 
             if (dinner == null)
@@ -87,6 +86,8 @@ namespace DapperDinner.Controllers
 
             if (!dinner.IsHostedBy(User.Identity.Name))
                 return View("InvalidOwner");
+
+            dinner.State = ObjectState.Modified;
 
             return View(dinner);
         }
@@ -121,10 +122,8 @@ namespace DapperDinner.Controllers
         [Authorize]
         public ActionResult Create()
         {
-            Dinner dinner = new Dinner()
-            {
-                EventDate = DateTime.Now.AddDays(7)
-            };
+            Dinner dinner = dinnerRepository.NewDinner();
+            dinner.EventDate = DateTime.Now.AddDays(7);
 
             return View(dinner);
         }

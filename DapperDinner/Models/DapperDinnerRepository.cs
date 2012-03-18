@@ -9,7 +9,7 @@ namespace DapperDinner.Models
 {
     public class DapperDinnerRepository : IDinnerRepository
     {
-        private string pagedQuery = @"SELECT * FROM (SELECT *, ROW_NUMBER() OVER (/**orderby**/) AS RowNumber FROM (
+        private const string pagedQuery = @"SELECT * FROM (SELECT *, ROW_NUMBER() OVER (/**orderby**/) AS RowNumber FROM (
             SELECT d.*, COUNT(r.DinnerID) AS RsvpCount 
             FROM Dinners d LEFT OUTER JOIN RSVP r ON d.DinnerID = r.DinnerID 
             /**where**/
@@ -17,7 +17,24 @@ namespace DapperDinner.Models
             ) as X ) as Y
             WHERE RowNumber BETWEEN @start AND @finish";
 
-        private string totalQuery = @"SELECT COUNT(*) FROM Dinners d /**where**/";
+        private const string totalQuery = @"SELECT COUNT(*) FROM Dinners d /**where**/";
+
+        public Dinner NewDinner()
+        {
+            return new Dinner
+            {
+                State = ObjectState.Added,
+            };
+        }
+
+        public RSVP NewRsvp(int dinnerId)
+        {
+            return new RSVP
+            {
+                DinnerID = dinnerId,
+                State = ObjectState.Added,
+            };
+        }
 
         public PagedList<Dinner> FindByLocation(float latitude, float longitude, string orderBy = "DinnerID", int page = 1, int pageSize = 20)
         {
@@ -152,11 +169,11 @@ namespace DapperDinner.Models
 
         private void InsertOrUpdateDinner(Dinner dinner, DbConnection connection)
         {
-            if (dinner.DinnerID == 0)
+            if (dinner.State == ObjectState.Added)
             {
                 InsertDinner(dinner, connection);
             }
-            else
+            else if (dinner.State == ObjectState.Modified)
             {
                 UpdateDinner(dinner, connection);
             }
@@ -167,7 +184,7 @@ namespace DapperDinner.Models
             dinner.DinnerID = connection.Query<int>(@"insert into Dinners " +
                 "(Title, EventDate, Description, HostedBy, ContactPhone, Address, Country, Latitude, Longitude, HostedById) " +
                 "VALUES (@Title, @EventDate, @Description, @HostedBy, @ContactPhone, @Address, @Country, @Latitude, @Longitude, @HostedById); " +
-                "SELECT CASE(scope_identity() as int)",
+                "SELECT CAST(scope_identity() as int)",
                 new
                 {
                     dinner.Title,
@@ -217,11 +234,11 @@ namespace DapperDinner.Models
 
         private void InsertOrUpdateRsvp(RSVP rsvp, DbConnection connection)
         {
-            if (rsvp.RsvpID == 0)
+            if (rsvp.State == ObjectState.Added)
             {
                 InsertRsvp(rsvp, connection);
             }
-            else
+            else if (rsvp.State == ObjectState.Modified)
             {
                 UpdateRsvp(rsvp, connection);
             }
@@ -232,7 +249,7 @@ namespace DapperDinner.Models
             rsvp.RsvpID = connection.Query<int>(@"insert into Rsvp " +
                 "(DinnerId, AttendeeName, AttendeeNameId) " +
                 "VALUES (@DinnerId, @AttendeeName, @AttendeeNameId); " +
-                "SELECT CASE(scope_identity() as int)",
+                "SELECT CAST(scope_identity() as int)",
                 new
                 {
                     rsvp.DinnerID,

@@ -7,6 +7,9 @@ namespace DapperDinner.Models
 
     public interface IDinnerRepository
     {
+        Dinner NewDinner();
+        RSVP NewRsvp(int dinnerId);
+
         PagedList<Dinner> FindByLocation(float latitude, float longitude, string orderBy = "DinnerID", int page = 1, int pageSize = 20);
         PagedList<Dinner> FindUpcomingDinners(string orderBy = "DinnerID", int page = 1, int pageSize = 20);
         PagedList<Dinner> FindUpcomingDinners(DateTime? eventDate, string orderBy = "DinnerID", int page = 1, int pageSize = 20);

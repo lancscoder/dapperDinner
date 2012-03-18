@@ -3,9 +3,8 @@ using System.Data.Services.Common;
 
 namespace DapperDinner.Models
 {
-    [Table("RSVP")]
     [DataServiceKey("RsvpID")]
-    public class RSVP
+    public class RSVP : ITracker
     {
         public int RsvpID { get; set; }
         public int DinnerID { get; set; }
@@ -13,5 +12,7 @@ namespace DapperDinner.Models
         public string AttendeeNameId { get; set; }
 
         public virtual Dinner Dinner { get; set; }
+
+        public ObjectState State { get; set; }
     }
 }
